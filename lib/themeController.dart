@@ -8,4 +8,4 @@ class ThemeController extends ValueNotifier<ThemeMode> {
 
   }
 }
-final themeController = ThemeController();
+

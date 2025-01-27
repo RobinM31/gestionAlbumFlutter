@@ -20,18 +20,14 @@ class _appBar_PrincipalState extends State<appBar_Principal> {
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(widget.title),
-      backgroundColor: Colors.green,
+
 
       actions: <Widget>[IconButton(
           onPressed: (){
           },
           icon: Icon(Icons.search)
         ),
-        IconButton(
-            onPressed: (){
-            },
-            icon: Icon(Icons.lightbulb)
-        ),
+
         ...widget.actions,
       ],
     );
