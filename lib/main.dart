@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutteralbum/AppBar/appbar.dart';
 import 'package:flutteralbum/my_flutter_app_icons.dart';
+import 'package:flutteralbum/widgetPerso/Card1.dart';
+import 'package:flutteralbum/widgetPerso/ContainerNavBar.dart';
 import 'package:json_theme/json_theme.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
@@ -81,48 +83,19 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: <Widget>[
-        Container(
-          child: Column(
-            children: [
-              Card(
-                color: Color.fromRGBO(91, 171, 95 ,1),
-                child: Row(
-                children: [
-                  Image.network('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Oxygen480-devices-media-optical-dvd.svg/1200px-Oxygen480-devices-media-optical-dvd.svg.png',
-                  height: 150,
-                  width: 150,
-                  ),
-                  Text("Bienvenue sur l'application \n de gestion d'album")
-                ],
-              ),
-              ),
-              Card(
-                child:Row(
-                  children: [
-                    Column(
-                      children: [
-                        Text('News',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        Text('Dernière actualité',
-                          textAlign: TextAlign.left,
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
+        Containernavbar1(),
         Container(
           child: const Text('Liste musique'),
         ),
-        Container(
-          child: const Text('Paramètre'),
-        ),
+        Containernavbar3()
       ][currentPageIndex],
+
+
+      floatingActionButton: currentPageIndex == 0 ? FloatingActionButton(
+          onPressed: () {},
+          tooltip: 'Increment',
+          child: const Icon(Icons.add),
+      ): null,
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
           setState(() {
